@@ -30,3 +30,8 @@ class Assessment:
 
 
 # Quiz Class
+
+class Quiz(Assessment):
+
+    def display_info(self):
+        print(f"Quiz: {self.title} - Max Score: {self.max_score}")
