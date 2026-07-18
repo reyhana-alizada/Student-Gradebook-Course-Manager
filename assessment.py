@@ -12,4 +12,5 @@ class Assessment:
         return (score / self.max_score) * 100
 
     # General message
-    
+    def grade_message(self, score):
+        percentage = self.calculate_percentage(score)
