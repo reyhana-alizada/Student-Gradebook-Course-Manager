@@ -14,3 +14,12 @@ class Assessment:
     # General message
     def grade_message(self, score):
         percentage = self.calculate_percentage(score)
+
+        if percentage >= 80:
+            return "Excellent"
+
+        elif percentage >= 55:
+            return "Passed"
+
+        else:
+            return "Failed"
