@@ -40,11 +40,17 @@ class Quiz(Assessment):
 
         percentage = self.calculate_percentage(score)
 
-        if percentage >= 80:
-            return "Great quiz result"
+        if percentage >= 90:
+            return "Great job! You got A."
 
-        elif percentage >= 55:
-            return "Good work"
+        elif percentage >= 80:
+            return "Great job! You got B."
+
+        elif percentage >= 70:
+            return "Good job! You got C."
+
+        elif percentage >= 60:
+            return "Good work! You got D."
 
         else:
-            return "Needs more practice"
+            return "Keep practicing! You got F."
