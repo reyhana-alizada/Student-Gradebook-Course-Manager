@@ -25,3 +25,5 @@ class Assessment:
             return "Failed"
 
     # Display assessment information
+    def display_info(self):
+        print(f"{self.title} - Max Score: {self.max_score}")
