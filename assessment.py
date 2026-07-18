@@ -23,3 +23,5 @@ class Assessment:
 
         else:
             return "Failed"
+
+    # Display assessment information
