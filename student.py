@@ -14,3 +14,8 @@ class Student:
 
         # Public Attribute
         self.courses = []
+
+    # Getter Methods
+
+    def get_id(self):
+        return self.__student_id
