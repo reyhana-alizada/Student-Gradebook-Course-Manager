@@ -44,3 +44,21 @@ class Course:
 
         return None
 
+
+    # Display Course Information
+
+    def display_info(self):
+
+        print("\n========== COURSE ==========")
+        print(f"Course Code : {self.course_code}")
+        print(f"Course Name : {self.course_name}")
+        print(f"Students    : {len(self.students)}")
+
+        print("\nAssessments:")
+
+        if len(self.assessments) == 0:
+            print("No assessments added.")
+
+        else:
+            for assessment in self.assessments:
+                assessment.display_info()
