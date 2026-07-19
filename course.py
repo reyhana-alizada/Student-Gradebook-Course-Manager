@@ -25,3 +25,10 @@ class Course:
         else:
             print("Student is already enrolled.")
 
+    # Add Assessment
+
+    def add_assessment(self, assessment):
+
+        self.assessments.append(assessment)
+        print("Assessment added successfully.")
+
