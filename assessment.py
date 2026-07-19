@@ -54,3 +54,11 @@ class Quiz(Assessment):
 
         else:
             return "Keep practicing! You got F."
+
+
+# Exam Class
+
+class Exam(Assessment):
+
+    def display_info(self):
+        print(f"Exam: {self.title} - Max Score: {self.max_score}")
