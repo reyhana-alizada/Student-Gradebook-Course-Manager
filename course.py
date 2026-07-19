@@ -32,3 +32,15 @@ class Course:
         self.assessments.append(assessment)
         print("Assessment added successfully.")
 
+
+    # Find Assessment
+
+    def find_assessment(self, title):
+
+        for assessment in self.assessments:
+
+            if assessment.title.lower() == title.lower():
+                return assessment
+
+        return None
+
