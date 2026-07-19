@@ -12,3 +12,16 @@ class Course:
 
         # List of Assessment Objects
         self.assessments = []
+
+
+    # Add Student
+
+    def add_student(self, student_id):
+
+        if student_id not in self.students:
+            self.students.append(student_id)
+            print("Student enrolled successfully.")
+
+        else:
+            print("Student is already enrolled.")
+
