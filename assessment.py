@@ -72,3 +72,11 @@ class Exam(Assessment):
 
         else:
             return "Failed exam"
+
+
+# Project Class
+
+class Project(Assessment):
+
+    def display_info(self):
+        print(f"Project: {self.title} - Max Score: {self.max_score}")
