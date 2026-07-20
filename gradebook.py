@@ -205,3 +205,11 @@ class Gradebook:
             del self.grades[student_id]
 
         print("Student deleted successfully.")
+
+    # SHOW REPORT
+
+    def show_report(self, student_id):
+
+        if student_id not in self.students:
+            print("Student not found!")
+            return
