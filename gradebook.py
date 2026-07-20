@@ -111,3 +111,14 @@ class Gradebook:
         if course_code not in self.courses:
             print("Course not found!")
             return
+
+        course = self.courses[course_code]
+        assessment = course.find_assessment(assessment_title)
+
+        if not assessment:
+            print("Assessment not found!")
+            return
+
+        if score < 0 or score > assessment.max_score:
+            print("Invalid score!")
+            return
