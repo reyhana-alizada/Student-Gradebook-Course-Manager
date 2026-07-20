@@ -183,3 +183,25 @@ class Gradebook:
             return "D"
         else:
             return "F"
+
+    # DELETE STUDENT
+
+    def delete_student(self, student_id):
+
+        if student_id not in self.students:
+            print("Student not found!")
+            return
+
+        # Remove from all courses
+        for course in self.courses.values():
+            if student_id in course.students:
+                course.students.remove(student_id)
+
+        # Remove from students dictionary
+        del self.students[student_id]
+
+        # Remove grades
+        if student_id in self.grades:
+            del self.grades[student_id]
+
+        print("Student deleted successfully.")
