@@ -300,3 +300,17 @@ class Gradebook:
         for i, (student_id, avg) in enumerate(ranking, 1):
             name = self.students[student_id].get_name()
             print(f"{i}. {name} ({student_id}) - {round(avg, 2)}")
+
+    # DASHBOARD (BONUS FEATURE)
+
+    def dashboard(self):
+
+        print("\n===== DASHBOARD =====")
+        print("Total Students :", len(self.students))
+        print("Total Courses  :", len(self.courses))
+
+        total_assessments = 0
+        for course in self.courses.values():
+            total_assessments += len(course.assessments)
+
+        print("Total Assessments:", total_assessments)
