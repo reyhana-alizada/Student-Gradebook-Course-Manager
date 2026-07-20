@@ -55,3 +55,15 @@ class Gradebook:
     def add_course(self, course):
         self.courses[course.course_code] = course
         print("Course added successfully.")
+
+    # VIEW COURSES
+
+    def view_courses(self):
+        print("\n===== ALL COURSES =====")
+
+        if not self.courses:
+            print("No courses found.")
+            return
+
+        for course in self.courses.values():
+            course.display_info()
