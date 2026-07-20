@@ -87,3 +87,14 @@ class Gradebook:
         self.students[student_id].enroll_course(course_code)
 
         print("Student enrolled successfully.")
+
+    # ADD ASSESSMENT
+
+    def add_assessment(self, course_code, assessment):
+
+        if course_code not in self.courses:
+            print("Course not found!")
+            return
+
+        self.courses[course_code].add_assessment(assessment)
+        print("Assessment added successfully.")
