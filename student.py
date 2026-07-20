@@ -50,3 +50,20 @@ class Student:
             self.courses.append(course_code)
         else:
             print("Student already enrolled in this course.")
+
+    # Display Student Information
+
+    def display_info(self):
+
+        print("\n===== Student Information =====")
+        print(f"Student ID : {self.__student_id}")
+        print(f"Name       : {self.__name}")
+        print(f"Email      : {self.__email}")
+
+        if self.courses:
+            print("Courses    :")
+
+            for course in self.courses:
+                print(f" - {course}")
+        else:
+            print("Courses    : No courses enrolled")
