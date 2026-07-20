@@ -213,3 +213,12 @@ class Gradebook:
         if student_id not in self.students:
             print("Student not found!")
             return
+
+        student = self.students[student_id]
+
+        print("\n===== STUDENT REPORT =====")
+        student.display_info()
+
+        if student_id not in self.grades:
+            print("No grades available.")
+            return
