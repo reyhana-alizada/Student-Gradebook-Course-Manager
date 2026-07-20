@@ -31,3 +31,5 @@ class Student:
     def set_name(self, name):
         if len(name.strip()) >= 2:
             self.__name = name
+        else:
+            print("Invalid name!")
