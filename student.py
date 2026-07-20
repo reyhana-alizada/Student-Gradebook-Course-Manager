@@ -25,3 +25,9 @@ class Student:
 
     def get_email(self):
         return self.__email
+
+    # Setter Methods
+
+    def set_name(self, name):
+        if len(name.strip()) >= 2:
+            self.__name = name
