@@ -34,3 +34,18 @@ class Gradebook:
 
         for student in self.students.values():
             print(student.display_info())
+
+    # SEARCH STUDENT
+
+    def search_student(self, keyword):
+        print("\n===== SEARCH RESULT =====")
+
+        found = False
+
+        for student in self.students.values():
+            if keyword.lower() in student.get_name().lower() or keyword in student.get_id():
+                print(student.display_info())
+                found = True
+
+        if not found:
+            print("No student found.")
