@@ -98,3 +98,16 @@ class Gradebook:
 
         self.courses[course_code].add_assessment(assessment)
         print("Assessment added successfully.")
+
+    # RECORD GRADE
+
+    def record_grade(self, student_id, course_code, assessment_title, score):
+
+        # Validation
+        if student_id not in self.students:
+            print("Student not found!")
+            return
+
+        if course_code not in self.courses:
+            print("Course not found!")
+            return
