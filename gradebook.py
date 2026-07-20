@@ -22,3 +22,15 @@ class Gradebook:
     def add_student(self, student):
         self.students[student.get_id()] = student
         print("Student added successfully.")
+
+    # VIEW STUDENTS
+
+    def view_students(self):
+        print("\n===== ALL STUDENTS =====")
+
+        if not self.students:
+            print("No students found.")
+            return
+
+        for student in self.students.values():
+            print(student.display_info())
