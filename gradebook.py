@@ -49,3 +49,9 @@ class Gradebook:
 
         if not found:
             print("No student found.")
+
+    # ADD COURSE
+
+    def add_course(self, course):
+        self.courses[course.course_code] = course
+        print("Course added successfully.")
