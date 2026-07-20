@@ -271,3 +271,32 @@ class Gradebook:
         print(f"Overall Average: {overall_average:.2f}%")
         print(f"Final Letter Grade: {self.letter_grade(overall_average)}")
         print(f"Final Result: {self.get_result(overall_average)}")
+
+    # STUDENT RANKING (CREATIVE FEATURE 2)
+
+    def show_ranking(self):
+
+        ranking = []
+
+        for student_id in self.students:
+
+            total = 0
+            count = 0
+
+            if student_id in self.grades:
+
+                for course in self.grades[student_id].values():
+                    for score in course.values():
+                        total += score
+                        count += 1
+
+            avg = total / count if count != 0 else 0
+            ranking.append((student_id, avg))
+
+        ranking.sort(key=lambda x: x[1], reverse=True)
+
+        print("\n===== STUDENT RANKING =====")
+
+        for i, (student_id, avg) in enumerate(ranking, 1):
+            name = self.students[student_id].get_name()
+            print(f"{i}. {name} ({student_id}) - {round(avg, 2)}")
