@@ -122,3 +122,11 @@ class Gradebook:
         if score < 0 or score > assessment.max_score:
             print("Invalid score!")
             return
+
+        # Save structure
+
+        self.grades.setdefault(student_id, {})
+        self.grades[student_id].setdefault(course_code, {})
+        self.grades[student_id][course_code][assessment_title] = score
+
+        print("Grade recorded successfully.")
