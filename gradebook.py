@@ -130,3 +130,33 @@ class Gradebook:
         self.grades[student_id][course_code][assessment_title] = score
 
         print("Grade recorded successfully.")
+
+    # CALCULATE AVERAGE
+
+    def calculate_average(self, student_id, course_code):
+
+        if student_id not in self.grades:
+            return 0
+
+        if course_code not in self.grades[student_id]:
+            return 0
+
+        course = self.courses[course_code]
+        assessments = self.grades[student_id][course_code]
+
+        total_percentage = 0
+        count = 0
+
+        for title, score in assessments.items():
+
+            assessment = course.find_assessment(title)
+
+            if assessment:
+                percentage = assessment.calculate_percentage(score)
+                total_percentage += percentage
+                count += 1
+
+        if count == 0:
+            return 0
+
+        return total_percentage / count
