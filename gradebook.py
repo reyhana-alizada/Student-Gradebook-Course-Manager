@@ -67,3 +67,23 @@ class Gradebook:
 
         for course in self.courses.values():
             course.display_info()
+
+    # ENROLL STUDENT IN COURSE
+
+    def enroll_student(self, student_id, course_code):
+
+        if student_id not in self.students:
+            print("Student not found!")
+            return
+
+        if course_code not in self.courses:
+            print("Course not found!")
+            return
+
+        # Add to course
+        self.courses[course_code].add_student(student_id)
+
+        # Add to student
+        self.students[student_id].enroll_course(course_code)
+
+        print("Student enrolled successfully.")
