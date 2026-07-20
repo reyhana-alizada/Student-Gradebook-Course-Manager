@@ -222,3 +222,52 @@ class Gradebook:
         if student_id not in self.grades:
             print("No grades available.")
             return
+
+        overall_total = 0
+        overall_count = 0
+
+        for course_code, assessments in self.grades[student_id].items():
+
+            course = self.courses[course_code]
+
+            print(f"\nCourse: {course.course_name} ({course_code})")
+            print("Grades:")
+
+            total_percentage = 0
+            count = 0
+
+            for title, score in assessments.items():
+
+                assessment = course.find_assessment(title)
+
+                if assessment:
+                    percentage = assessment.calculate_percentage(score)
+
+                    print(
+                        f"{title}: {score}/{assessment.max_score} = {percentage:.2f}%"
+                    )
+
+                    total_percentage += percentage
+                    count += 1
+
+            if count != 0:
+                average = total_percentage / count
+            else:
+                average = 0
+
+            print(f"Average: {average:.2f}%")
+            print(f"Letter Grade: {self.letter_grade(average)}")
+            print(f"Result: {self.get_result(average)}")
+
+            overall_total += average
+            overall_count += 1
+
+        if overall_count != 0:
+            overall_average = overall_total / overall_count
+        else:
+            overall_average = 0
+
+        print("\n===== OVERALL RESULT =====")
+        print(f"Overall Average: {overall_average:.2f}%")
+        print(f"Final Letter Grade: {self.letter_grade(overall_average)}")
+        print(f"Final Result: {self.get_result(overall_average)}")
