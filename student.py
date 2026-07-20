@@ -33,3 +33,12 @@ class Student:
             self.__name = name
         else:
             print("Invalid name!")
+
+
+    def set_email(self, email):
+        # Simple Email Validation
+        if "@" in email and "." in email:
+            self.__email = email
+        else:
+            print("Invalid email!")
+            self.__email = "Not Available"
