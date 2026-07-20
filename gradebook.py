@@ -16,3 +16,9 @@ class Gradebook:
 
         # Passing rule
         self.passing_grade = 55
+
+    # ADD STUDENT
+
+    def add_student(self, student):
+        self.students[student.get_id()] = student
+        print("Student added successfully.")
