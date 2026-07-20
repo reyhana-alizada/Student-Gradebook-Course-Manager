@@ -1,16 +1,33 @@
-# This is a sample Python script.
+# main.py
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from student import Student
+from course import Course
+from assessment import Quiz, Exam, Project
+from gradebook import Gradebook
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def main():
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    gb = Gradebook()
+
+    while True:
+
+        print("\n===== STUDENT GRADEBOOK SYSTEM =====")
+        print("1. Add Student")
+        print("2. View Students")
+        print("3. Search Student")
+        print("4. Delete Student")
+        print("5. Add Course")
+        print("6. View Courses")
+        print("7. Enroll Student")
+        print("8. Add Assessment")
+        print("9. Record Grade")
+        print("10. Show Report")
+        print("11. Show Ranking")
+        print("12. Dashboard")
+        print("0. Exit")
+
+        choice = input("Choose option: ")
+
+
+
