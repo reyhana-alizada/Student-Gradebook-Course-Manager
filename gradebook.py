@@ -160,3 +160,12 @@ class Gradebook:
             return 0
 
         return total_percentage / count
+
+    # PASS / FAIL
+
+    def get_result(self, average):
+
+        if average >= self.passing_grade:
+            return "Passed"
+        else:
+            return "Failed"
